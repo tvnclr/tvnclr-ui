@@ -1,5 +1,7 @@
 # tvnclr-ui
 
+<p align="center"><img src="docs/banner.png" width="720" alt="tvnclr-ui" /></p>
+
 The Compose design system shared by tvnclr's Android apps ([OTPilot](https://github.com/tvnclr/OTPilot), [Slap](https://github.com/tvnclr/Slap)).
 
 Package `dev.tvnclr.ui`, components prefixed with `Tv`.
