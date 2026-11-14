@@ -35,8 +35,7 @@ There is no standalone Gradle project: build through an app that includes `:tvnc
 - Change `README.md` without the owner asking: it is the public page.
 
 ## State
-- `v1.0.2` released (OTPilot pins it; Slap pins `v1.0.0`).
-- `dev` holds the on-color fix (see `CHANGELOG.md`), not released yet.
+- `v1.0.3` released: text on accent fills by contrast, `OnColorTest`. OTPilot and Slap pin it.
 
 ## Next step
 See the top entry of `CHANGELOG.md`.
