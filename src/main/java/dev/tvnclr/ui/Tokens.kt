@@ -2,6 +2,9 @@ package dev.tvnclr.ui
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.Hyphens
+import androidx.compose.ui.text.style.LineBreak
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -29,17 +32,20 @@ object TvShape {
   val pill = RoundedCornerShape(50)
 }
 
-/** Fixed type scale: hierarchy comes from size/weight, not from random colors. */
+/**
+ * Fixed type scale: hierarchy comes from size/weight, not from random colors. Prose styles hyphenate long words (German compounds, etc.) instead of splitting them at
+ * any letter; code and mono stay left-to-right so versions and commands read correctly in RTL locales.
+ */
 object TvType {
-  val display = TextStyle(fontSize = 30.sp, lineHeight = 36.sp, fontWeight = FontWeight.Bold)
-  val title = TextStyle(fontSize = 20.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold)
-  val section = TextStyle(fontSize = 13.sp, lineHeight = 18.sp, fontWeight = FontWeight.SemiBold, letterSpacing = 0.4.sp)
-  val item = TextStyle(fontSize = 16.sp, lineHeight = 22.sp, fontWeight = FontWeight.Medium)
-  val body = TextStyle(fontSize = 15.sp, lineHeight = 21.sp)
-  val caption = TextStyle(fontSize = 13.sp, lineHeight = 18.sp)
-  val label = TextStyle(fontSize = 12.sp, lineHeight = 16.sp, fontWeight = FontWeight.SemiBold)
-  val code = TextStyle(fontSize = 30.sp, lineHeight = 36.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Monospace, letterSpacing = 4.sp)
-  val mono = TextStyle(fontSize = 13.sp, lineHeight = 18.sp, fontFamily = FontFamily.Monospace)
+  val display = TextStyle(fontSize = 30.sp, lineHeight = 36.sp, fontWeight = FontWeight.Bold, hyphens = Hyphens.Auto, lineBreak = LineBreak.Paragraph)
+  val title = TextStyle(fontSize = 20.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold, hyphens = Hyphens.Auto, lineBreak = LineBreak.Paragraph)
+  val section = TextStyle(fontSize = 13.sp, lineHeight = 18.sp, fontWeight = FontWeight.SemiBold, letterSpacing = 0.4.sp, hyphens = Hyphens.Auto, lineBreak = LineBreak.Paragraph)
+  val item = TextStyle(fontSize = 16.sp, lineHeight = 22.sp, fontWeight = FontWeight.Medium, hyphens = Hyphens.Auto, lineBreak = LineBreak.Paragraph)
+  val body = TextStyle(fontSize = 15.sp, lineHeight = 21.sp, hyphens = Hyphens.Auto, lineBreak = LineBreak.Paragraph)
+  val caption = TextStyle(fontSize = 13.sp, lineHeight = 18.sp, hyphens = Hyphens.Auto, lineBreak = LineBreak.Paragraph)
+  val label = TextStyle(fontSize = 12.sp, lineHeight = 16.sp, fontWeight = FontWeight.SemiBold, hyphens = Hyphens.Auto, lineBreak = LineBreak.Paragraph)
+  val code = TextStyle(fontSize = 30.sp, lineHeight = 36.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Monospace, letterSpacing = 4.sp, textDirection = TextDirection.Ltr)
+  val mono = TextStyle(fontSize = 13.sp, lineHeight = 18.sp, fontFamily = FontFamily.Monospace, textDirection = TextDirection.Ltr)
 }
 
 /** Motion: short and purposeful. */
