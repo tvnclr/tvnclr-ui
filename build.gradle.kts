@@ -24,4 +24,5 @@ dependencies {
   api("androidx.compose.material:material-icons-extended")
   implementation("androidx.core:core-ktx:1.17.0")
   implementation("androidx.datastore:datastore-preferences:1.1.7")
+  testImplementation("junit:junit:4.13.2")
 }

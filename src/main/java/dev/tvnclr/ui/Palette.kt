@@ -40,7 +40,15 @@ data class TvColors(
     val danger: Color,
 )
 
-internal fun onColorFor(c: Color): Color = if (c.luminance() > 0.45f) Color(0xFF15131C) else Color.White
+private val onDark = Color(0xFF15131C)
+
+/** Text and icon color on a [c] fill: whichever of [onDark] and white has the higher WCAG contrast with it. */
+internal fun onColorFor(c: Color): Color {
+  val l = c.luminance() + 0.05f
+  val darkContrast = l / (onDark.luminance() + 0.05f)
+  val whiteContrast = 1.05f / l
+  return if (darkContrast >= whiteContrast) onDark else Color.White
+}
 
 internal fun neutralColors(mode: TvThemeMode, dark: Boolean, accent: Color): TvColors {
   return if (!dark) {

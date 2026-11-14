@@ -3,3 +3,5 @@ build/
 *.iml
 .idea/
 local.properties
+AGENTS.local.md
+CLAUDE.local.md

@@ -472,7 +472,7 @@ fun TvColorDots(
               .clickable(role = Role.RadioButton) { onSelect(i) },
           contentAlignment = Alignment.Center,
       ) {
-        if (isSel) Icon(Icons.Rounded.Check, labels.getOrNull(i), tint = Color.White, modifier = Modifier.size(18.dp))
+        if (isSel) Icon(Icons.Rounded.Check, labels.getOrNull(i), tint = onColorFor(if (i == dynamicIndex) Color(0xFFAE94FF) else color), modifier = Modifier.size(18.dp))
       }
     }
   }
